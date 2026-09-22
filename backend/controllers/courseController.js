@@ -21,7 +21,7 @@ const getAllCourses = async (req, res) => {
 };
 
 
-// Get one course
+// Get one courses
 const getCourseById = async (req, res) => {
   try {
     const { id } = req.params;
