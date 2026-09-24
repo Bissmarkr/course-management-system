@@ -746,6 +746,23 @@ a:hover {
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
+.input-error {
+  border-color: var(--color-danger) !important;
+}
+
+.input-error:focus {
+  border-color: var(--color-danger) !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.15) !important;
+}
+
+.field-error {
+  display: block;
+  color: var(--color-danger);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
 textarea.input {
   resize: vertical;
 }
@@ -1053,6 +1070,32 @@ textarea.input {
   letter-spacing: 0.5px;
 
   white-space: nowrap;
+}
+
+.table th.th-sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.table th.th-sortable:hover {
+  background-color: #e2e8f0;
+  color: var(--color-primary);
+}
+
+.sort-indicator {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+.sort-indicator-inactive {
+  display: inline-block;
+  color: #94a3b8;
+  opacity: 0.45;
+  margin-left: 5px;
+  font-size: 0.85em;
 }
 
 .table tbody tr:hover {
@@ -1416,6 +1459,7 @@ textarea.input {
 
 }
 
+
 /* ---------- Advanced Course Filters ---------- */
 
 .filter-bar {
@@ -1497,3 +1541,55 @@ textarea.input {
   }
 }
 
+/* ---------- Admin Course Management Filter Bar (CR-003) ---------- */
+
+.filter-bar.filter-bar-admin {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1.2fr auto;
+  align-items: flex-end;
+  gap: 16px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 18px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+}
+
+.filter-bar.filter-bar-admin .form-group {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-bar.filter-bar-admin .form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-muted);
+  margin-bottom: 6px;
+}
+
+.filter-bar.filter-bar-admin .filter-actions {
+  justify-content: flex-end;
+}
+
+.filter-bar.filter-bar-admin .filter-actions .btn {
+  white-space: nowrap;
+  height: 42px;
+}
+
+@media (max-width: 900px) {
+  .filter-bar.filter-bar-admin {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .filter-bar.filter-bar-admin {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-bar.filter-bar-admin .filter-actions .btn {
+    width: 100%;
+  }
+}
